@@ -22,11 +22,13 @@ package org.sonar.server.issue.index;
 public class ProjectStatistics {
 
   private final String projectUuid;
+  private final String branchUuid;
   private final long issueCount;
   private final long lastIssueDate;
 
-  public ProjectStatistics(String projectUuid, long issueCount, long lastIssueDate) {
+  public ProjectStatistics(String projectUuid, String branchUuid, long issueCount, long lastIssueDate) {
     this.projectUuid = projectUuid;
+    this.branchUuid = branchUuid;
     this.issueCount = issueCount;
     this.lastIssueDate = lastIssueDate;
   }
@@ -41,5 +43,9 @@ public class ProjectStatistics {
 
   public long getLastIssueDate() {
     return lastIssueDate;
+  }
+
+  public String getBranchUuid() {
+    return branchUuid;
   }
 }
